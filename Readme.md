@@ -1,1 +1,1 @@
-This is tool for 
+This is test for creating a plugin for Intellij
