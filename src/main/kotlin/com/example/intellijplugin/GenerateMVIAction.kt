@@ -3,7 +3,9 @@ package com.example.intellijplugin
 import com.example.intellijplugin.dialog.NameInputDialog
 import com.example.intellijplugin.dialog.NameInputDialogListener
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.project.DumbAwareAction
+import java.io.File
 
 class GenerateMVIAction : DumbAwareAction("MVI") {
 
@@ -11,7 +13,10 @@ class GenerateMVIAction : DumbAwareAction("MVI") {
         val project = e.project ?: return
         NameInputDialog(project, object : NameInputDialogListener {
             override fun onOk(name: String) {
-                println("YEAHHHHHH $name")
+                val path = e.getData(CommonDataKeys.VIRTUAL_FILE)?.path
+                val file = File("$path/morteza.txt")
+                file.createNewFile()
+                file.writeText("HELLO MORTEZA, I AM A PLUGIN")
             }
 
             override fun onCancel() {
