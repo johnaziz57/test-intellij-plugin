@@ -7,7 +7,7 @@ import javax.swing.JPanel
 import javax.swing.JTextField
 
 class NameInputDialog(
-    private val project: Project,
+    project: Project,
     private val listener: NameInputDialogListener,
 ) : DialogWrapper(project) {
 
@@ -17,6 +17,16 @@ class NameInputDialog(
     init {
         init()
         title = "MVI name"
+    }
+
+    override fun doOKAction() {
+        super.doOKAction()
+        listener.onOk(mviNameField?.text ?: "failed")
+    }
+
+    override fun doCancelAction() {
+        super.doCancelAction()
+        listener.onCancel()
     }
 
     override fun createCenterPanel(): JComponent? {

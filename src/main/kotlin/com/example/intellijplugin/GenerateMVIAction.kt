@@ -9,21 +9,14 @@ class GenerateMVIAction : DumbAwareAction("MVI") {
 
     override fun actionPerformed(e: AnActionEvent) {
         val project = e.project ?: return
-
-//        val dialog = NameInput();
-//        dialog.pack()
-//        dialog.isVisible = true
         NameInputDialog(project, object : NameInputDialogListener {
             override fun onOk(name: String) {
-                TODO("Not yet implemented")
+                println("YEAHHHHHH $name")
             }
 
             override fun onCancel() {
-                TODO("Not yet implemented")
+                println("NAAAAHHHHH")
             }
         }).showAndGet()
-//        Messages.showDialog("Hello", "Title", emptyArray(), 0, Messages.getInformationIcon())
-
     }
-
 }
