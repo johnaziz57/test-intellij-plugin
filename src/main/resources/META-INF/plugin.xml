@@ -26,7 +26,8 @@
     </extensions>
 
     <actions>
-        <action class="com.example.intellijplugin.GenerateMVIAction" icon="/icons/logo.png" id="test.new.action.mvi">
+        <action class="com.example.intellijplugin.actions.mvi.GenerateMVIAction" icon="/icons/logo.png"
+                id="test.new.action.mvi">
             <add-to-group group-id="NewGroup"/>
             <!--            <add-to-group group-id="test.file.group.mvi"/>-->
 

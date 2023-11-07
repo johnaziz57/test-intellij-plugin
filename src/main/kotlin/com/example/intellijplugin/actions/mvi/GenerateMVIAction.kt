@@ -1,7 +1,6 @@
-package com.example.intellijplugin
+package com.example.intellijplugin.actions.mvi
 
 import com.example.intellijplugin.dialog.NameInputDialog
-import com.example.intellijplugin.dialog.NameInputDialogListener
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.project.DumbAwareAction

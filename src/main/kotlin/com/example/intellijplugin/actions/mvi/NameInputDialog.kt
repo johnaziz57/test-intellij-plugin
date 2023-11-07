@@ -1,5 +1,6 @@
 package com.example.intellijplugin.dialog
 
+import com.example.intellijplugin.actions.mvi.NameInputDialogListener
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogWrapper
 import javax.swing.JComponent
