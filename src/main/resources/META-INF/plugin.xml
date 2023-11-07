@@ -24,22 +24,30 @@
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
-
     <actions>
-        <action class="com.example.intellijplugin.actions.mvi.GenerateMVIAction" icon="/icons/logo.png"
-                id="test.new.action.mvi">
-            <add-to-group group-id="NewGroup"/>
-            <!--            <add-to-group group-id="test.file.group.mvi"/>-->
-
-        </action>
-
-        <group icon="/icons/logo.png"
+        <!--Groups must be defined before Actions, this way actions can use `add-to-group` tag to be added to the group
+        if the Groups are definied after the Actions, `add-to-group` tag won't do anything and nothing will be added
+        to the group-->
+        <group class="com.example.intellijplugin.groups.ABCGroup"
+               icon="/icons/logo.png"
                id="test.file.group.mvi"
                popup="true"
                text="ABC"
         >
             <add-to-group group-id="ProjectViewPopupMenu"/>
         </group>
+
+
+        <action class="com.example.intellijplugin.actions.mvi.GenerateMVIAction" icon="/icons/logo.png"
+                id="test.new.action.mvi">
+            <add-to-group group-id="NewGroup"/>
+            <add-to-group group-id="test.file.group.mvi"/>
+
+        </action>
+        <action class="com.example.intellijplugin.actions.gradle.GradleAction"
+                icon="/icons/gradle.svg">
+            <add-to-group group-id="test.file.group.mvi"/>
+        </action>
 
     </actions>
 </idea-plugin>
