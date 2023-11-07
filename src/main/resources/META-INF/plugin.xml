@@ -26,9 +26,16 @@
     </extensions>
 
     <actions>
-        <action class="com.example.intellijplugin.GenerateMVIAction" id="mvi">
+        <action class="com.example.intellijplugin.GenerateMVIAction" icon="/icons/logo.png" id="test.new.action.mvi">
             <add-to-group group-id="NewGroup"/>
+
         </action>
+
+        <!--        <group id="test.file.group.mvi"
+                       text = "ABC"
+                       popup="true"
+                       icon="/icons/logo.png"
+                       />-->
 
     </actions>
 </idea-plugin>
