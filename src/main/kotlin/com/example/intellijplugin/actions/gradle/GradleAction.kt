@@ -16,7 +16,9 @@ class GradleAction : DumbAwareAction("Gradle Action") {
         val projectPath = e.project?.basePath ?: return
         val connector = GradleConnector.newConnector()
         connector.forProjectDirectory(File(projectPath))
-        val connection = connector.connect()
+        val connection = connector
+            .useBuildDistribution()
+            .connect()
         try {
             val resultHandler = object : ResultHandler<Void> {
                 override fun onComplete(result: Void?) {
@@ -32,6 +34,7 @@ class GradleAction : DumbAwareAction("Gradle Action") {
             connection.newBuild()
                 .forTasks("iDD")
                 .setStandardOutput(System.out)
+                .setJavaHome(File("/Users/john/Library/Java/JavaVirtualMachines/corretto-11.0.21/Contents/Home"))
                 .run(resultHandler)
 
 
