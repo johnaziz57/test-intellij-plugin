@@ -40,3 +40,9 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/lib/gradle-tooling-api-7.3-20210825160000+0000.jar
+/lib/gradle-tooling-api-7.3-20210825160000+0000-javadoc.jar
+/lib/gradle-tooling-api-7.3-20210825160000+0000-sources.jar
+/lib/slf4j-api-1.7.30.jar
+/lib/slf4j-api-1.7.30-javadoc.jar
+/lib/slf4j-api-1.7.30-sources.jar
